@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./inndex.css">
+
+</head>
+<body>
+    
+    <form class="form-group form p-3 my-3" >
+        <label> Email:</label>
+        <input class="form-group email my-3 mx-4" type="email"  required onkeyup="isEmpty()" ><br>
+        <label>Password:</label>
+        <input class="form-group password" type="password"    required onkeyup="isEmpty()" minlength="8" ><br>
+        <input class="form-group checkbox" type="checkbox" required >
+        <label> You agree to sign up</label><br>
+        <button class="btn btn-primary" disabled>Login</button>
+    </form>
+</body>
+<script src="./index.js"></script>
+</html>
