@@ -9,17 +9,21 @@
     <link rel="stylesheet" href="./inndex.css">
 
 </head>
-<body>
-    
-    <form class="form-group form p-3 my-3" >
+<body class="d-flex align-items-center justify-content-center flex-column ">
+    <div class="py-2 container text-center fw-bold fs-2">
+        
+    </div>
+    <div class=" d-flex align-items-center justify-content-center flex-column">
+    <form class="form-group form border border-primary p-4   " >
         <label> Email:</label>
-        <input class="form-group email my-3 mx-4" type="email"  required onkeyup="isEmpty()" ><br>
+        <input class="form-control email  " type="email"  required onkeyup="isEmpty()" ><br>
         <label>Password:</label>
-        <input class="form-group password" type="password"    required onkeyup="isEmpty()" minlength="8" ><br>
+        <input class="form-control  password" type="password"    required onkeyup="isEmpty()" ><br>
         <input class="form-group checkbox" type="checkbox" required >
         <label> You agree to sign up</label><br>
-        <button class="btn btn-primary" disabled>Login</button>
+        <button class="btn btn-primary mt-2" disabled>Login</button>
     </form>
+</div>
 </body>
 <script src="./index.js"></script>
 </html>
