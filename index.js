@@ -1,58 +1,61 @@
 var email = document.querySelector('.email');
 var password = document.querySelector('.password');
-var checkbox = document.getElementById('checkbox');
-var btn = document.querySelector('.btn');
-var form = document.querySelector('.form');
-var container = document.querySelector('.container');
 var errors = document.querySelector('.errors');
 var errorContainerEmail = document.querySelector('.errorcontainer');
 var errorContainerPass = document.querySelector('.errorcontainerPass');
-
-
- const isEmpty = () => {
-
-    var emailValue = 'user123@gmail.com' 
+ $(() => {
+  $('.form-control').keyup(() => {
+     var emailValue = 'user123@gmail.com' 
     var passwordValue = 'user123'
     var passwordGuest = "guest123"
-
-    if(email.value && password.value  && checkbox.addEventListener('click' , () => {
+    if(email.value && password.value  && $('#checkbox').click(() => {
         if(checkbox.checked){
-            btn.removeAttribute("disabled")
-            btn.addEventListener('click' , () => {
+            $('.btn').removeAttr("disabled")
+           $('.btn').click(() => {
                 if(email.value === emailValue && password.value === passwordValue){
-                    window.location.href = "https://ruzell11.github.io/final-portfolio/"
-                    container.innerHTML = "Welcome Ruz!!"
-                    email.classList.remove('redBorder');
+                   $('.container').html ( "Welcome Ruz!!")
+                    errorContainerPass.innerHTML = ""
+                    errors.innerHTML = ""
+                    errorContainerEmail.innerHTML = ""
+                    $('.form-control').removeClass('redBorder')
+                    window.location.href = "https://stackoverflow.com/questions/7078660/jquery-location-href"
                 }else{
                     if(password.value != passwordValue && email.value != emailValue){
                         errors.innerHTML = "Invalid Email and Password"
-                    } else if(email.value != emailValue){
+                        errorContainerPass.innerHTML = ""
+                        errorContainerEmail.innerHTML = ""
+                        $('.form-control').addClass('redBorder')
+                    } else if(email.value != emailValue && password.value === passwordValue){
                         errorContainerEmail.innerHTML = "Invalid Email"
                         errors.innerHTML = ""
-                    }else if(password.value != passwordValue){
+                        email.classList.add('redBorder')
+                        password.classList.remove('redBorder')
+                    }else if(password.value != passwordValue && email.value === emailValue){
                         errorContainerPass.innerHTML = "Invalid Pass"
                         errors.innerHTML = ""
+                        email.classList.remove('redBorder')
+                        password.classList.add('redBorder')
                     }
                 }if(email.value && password.value === passwordGuest){
+                    email.classList.remove('redBorder')
                    errors.innerHTML = ""
-                    container.innerHTML = "Welcome Guest"
+                   $('.container').html ( "Welcome Guest")
                     window.location.href = "https://www.youtube.com/"
                 }
             })
         }else{
-            btn.disabled = true;
+            $('.btn').disable = true
         }
-    }))
-    {
+    }));
+})
+})
+ $(() => {
+    $('.form').submit((event) => {
+        event.preventDefault()
+    });
+ })
+    
+ 
 
-    
-     
-           
-        }
-     }
-form.addEventListener('submit' , (event) => {
-    event.preventDefault()
-    
-});
 
 
